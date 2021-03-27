@@ -67,5 +67,5 @@ CREATE TABLE IF NOT EXISTS `hoteis`(
     `local` int(11) NOT NULL, 
 
     PRIMARY KEY (`id`),
-    KEY
+    KEY `local` (`local`)
 )
