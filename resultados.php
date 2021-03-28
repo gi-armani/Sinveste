@@ -42,7 +42,6 @@
         $voos = $resultado;
     }
     $voos2 = $voos;
-    var_dump($voos2);
     
     $hoteis;
     $query = "select * from hoteis where localId=${destinoId}"; 
@@ -93,7 +92,8 @@
                     </div>
                 </div>
                 <div class='contorno-quadro-milhas'>
-                    <div class='preenche-quadro-milhas' style='width: <?php echo $porcentagemCompleta ?>%'></div>
+                    <div id='some' class='preenche-quadro-milhas' style='width: <?php echo $porcentagemCompleta ?>%'></div>
+                    <div id='confirmacao2' class='preenche-quadro-milhas' style='width: <?php echo $porcentagemCompleta + 10 ?>%; display: none;'></div>
                 </div>
             </div>
             <!-- <img src='fotos/quadroDeMilhas.svg' class='quadroDeMilhas'/> -->
@@ -177,8 +177,8 @@
                             <div class="wrapper">
                                 <div class="esquerda">
                                     <div>
-                                        <p class="text"> <?php echo $partida?> </p>
-                                        <p class="text"> <?php echo $destino?> </p>
+                                        <p class="text"> Partida:<?php echo $partida?> </p>
+                                        <p class="text"> Destino:<?php echo $destino?> </p>
                                     </div>
                                     <div>
                                         <p class="text"> <?php echo $row['duracao']?> </p>
@@ -194,16 +194,20 @@
                                         <p class="special-text"> Reserve agora e ganhe +500 bônus </p>
                                     </div>
                                     <div class="button-wrapper">
-                                        <button type='button' class='tabs-button' onClick="">Reservar</button>
+                                        <button type='button' class='tabs-button' onclick="mostrarConfirmacao()">Reservar</button>
                                         <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    <?php  } ?>
+                    </div>
+
+                    <div id='confirmacao' style='display: none; heigth: 60rem'>
+                            <h1 style='padding-top: 25%; padding-bottom: 25%;'>Parabéns! Você reservou seu voo!</h1>
                     </div>
                     
                 
-                    <?php  } ?>
 
                     <div id='opcoes-hoteis' style='display: none;'>
                         <?php     
@@ -220,7 +224,7 @@
                                         
                                     </div>
                                     <div>
-                                        <p class="text"> <?php echo $novaData; ?> </p>
+                                        <p class="text"> <?php 10/01/2022 ?> </p>
                                     </div>
                                 </div>
                                 <div class="direita">
@@ -238,61 +242,37 @@
                                 </div>
                             </div>
                         </div>
+                    <?php } ?>
                     </div>
 
-                    <?php } ?>
                 
-                    <div id='minhas-reservas' style='display: none;'>
-                        <?php
-                            while($row = mysqli_fetch_array($voos2, MYSQLI_ASSOC)){
-                                $partida; 
-                                $destino;
-                                $partidaId = $row['partidaId'];
-                                $query = "select nome from destinos where id=${partidaId}";
-                                $resultado = mysqli_query($conexao, $query);
-                                if(mysqli_num_rows($resultado)){
-                                    $dados = mysqli_fetch_assoc($resultado);
-                                    $partida = $dados['nome'];
-                                }
-                                $destinoId = $row['destinoId'];
-                                $query = "select nome from destinos where id=${destinoId}";
-                                $resultado = mysqli_query($conexao, $query);
-                                if(mysqli_num_rows($resultado)){
-                                    $dados = mysqli_fetch_assoc($resultado);
-                                    $destino = $dados['nome'];
-                                }
-                        ?>
-                        <div class="box">
-                        <!-- <p class="title">Voo</p>  -->
+                    <div id='minhas-reservas' style='display: none'>
+                        <p class='title'> Voo </p>
+                        
+                        <div class="box" style='margin-top:0%'>
                             <div class="wrapper">
                                 <div class="esquerda">
                                     <div>
-                                        <p class="text"> <?php echo $partida?> </p>
-                                        <p class="text"> <?php echo $destino?> </p>
+                                        <p class="text"> Partida:<?php echo $partida?> </p>
+                                        <p class="text"> Destino:<?php echo $destino?> </p>
                                     </div>
                                     <div>
-                                        <p class="text"> <?php echo $row['duracao']?> </p>
-                                        <p class="text"> <?php echo trataData($row['data']) ?> </p>
+                                        <p class="text"> 02:10:00 </p>
+                                        <p class="text"> 10/01/2022 </p>
                                     </div>
                                 </div>
                                 <div class="direita">
                                     <div>
-                                        <p style='text-align:center;' class="bigger-text">Total necessário </p>
-                                        <p style='text-align:center;' class="bigger-text"><b><?php echo $row['valor']?></b> milhas</p>
-                                    </div>
-                                    <div>
-                                        <p class="special-text"> Reserve agora e ganhe +500 bônus </p>
-                                    </div>
-                                    <div class="button-wrapper">
-                                        <button type='button' class='tabs-button' onClick="">Reservar</button>
-                                        <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
+                                        <p style='text-align:center;' class="bigger-text">Custo </p>
+                                        <p style='text-align:center;' class="bigger-text"><b>114000</b> milhas</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
+        
                     </div>
                     
-                    <?php  } ?>
                 
                     
                 </div> 
@@ -308,7 +288,7 @@
                     <img src="fotos/resultados/despesas2.svg" class="despesas">
                 </div>
             </div>
-            
+
         </div>
         <div class="footer">
             <?php include 'footer.php';?>
@@ -367,6 +347,14 @@
                 document.getElementById('opcoes-voos').style.display = "none";
                 document.getElementById('opcoes-hoteis').style.display = "none";
                 document.getElementById('minhas-reservas').style.display = "block";
+            }
+
+
+            function mostrarConfirmacao() {
+                document.getElementById('opcoes-voos').style.display = "none";
+                document.getElementById('some').style.display = "none";
+                document.getElementById('confirmacao').style.display = "block";
+                document.getElementById('confirmacao2').style.display = "block";
             }
         </script>
 
