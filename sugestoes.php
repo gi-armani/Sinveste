@@ -3,6 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href='sugestoes.css'/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
     </head>
     <body>
         <?php include 'header.php';?>

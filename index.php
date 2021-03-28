@@ -5,7 +5,13 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
     </head>
 
     <body class="body">
