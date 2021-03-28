@@ -1,0 +1,15 @@
+h1 {
+    font-size: 2.5rem;
+    color: #FF5A00;
+    margin-left: 10%;
+}
+
+.image-div {
+    display: flex;
+    justify-content: center;
+}
+
+.image-div img {
+    width: 70rem;
+    height: auto;
+}
