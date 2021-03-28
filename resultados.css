@@ -5,6 +5,11 @@
     justify-content: center;
 }
 
+.financeiro-fotos {
+    width: 20rem;
+    height: auto;
+}
+
 .etapas-container {
     display: flex;
     flex-direction: column;
@@ -15,6 +20,28 @@
 .etapas {
     width: 68rem;
     height: auto;
+}
+
+.mesma-linha {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.mesma-linha h4 {
+    margin: .2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+.mesma-linha h5 {
+    margin: .2rem;
+}
+
+h5 {
+    font-size: 1rem;
 }
 
 #terceiro{
@@ -48,7 +75,7 @@ h1 {
 .box{
     margin-right:5%;
     margin-left:7%;
-    width: 70%;
+    width: 50%;
     margin-top: 5%;
     height: 20%;
     border: 2px solid #FF5A00;

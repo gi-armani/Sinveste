@@ -23,15 +23,37 @@
             </div>
 
             <div id='primeiro' >
-                <h1>segundo</h1>
+                <h1>É hora de aprender! Invista em você!</h1>
+                <div class="despesas-wrapper">
+                    <div class='mesma-linha'>
+                        <h5>Aprenda a economizar seu dinheiro com </h5><h5 style='color: #FF5A00'> quem entende do assunto </h5> <h5>.</h5>
+                    </div>
+                    <div class='mesma-linha'>
+                        <h5>Sempre que terminar de assistir um vídeo, você ganhará milhas bônus porque </h5><h5 style='color: #FF5A00'> investir nos seus sonhos, é investir em você </h5> <h5>!</h5>
+                    </div>
+                    <img src="fotos/resultados/financeiro1certo.svg" class='etapas'>
+                    <img src="fotos/resultados/financeiro2certo.svg" class='etapas' style='width: 70rem'>
+                    <button type='button' class='tabs-button'>Carregar mais</button>
+                    <h5>Preparamos alguns arquivos que você pode usar no seu planejamento diário:</h5>
+                    <div class='botoes-arquivos'>
+                        <button type='button' class='tabs-button'>Arquivo 1</button>
+                        <button type='button' class='tabs-button'>Arquivo 2</button>
+                        <button type='button' class='tabs-button'>Arquivo 3</button>
+    
+                    </div>
+
+                </div>
             </div>
 
             <div id='segundo' style='display: none;'>
                 <h1>Invista no seu sonho, ainda não está tarde!</h1>
                 <div class='etapas-container'>
-                    <img src="fotos/resultados/etapas1.svg" class="etapas">
-                    <p>Reserve com <p style='color: #FF5A00'>antecedência</p> seu hotel</p>
-                    <p>Aqui estão algumas sugestões para você:</p>
+                    <img src="fotos/resultados/etapas1.svg" class="etapas"><br>
+                    <div class='mesma-linha'>
+                        <h4>Reserve com </h4><h4 style='color: #FF5A00'> antecedência </h4> <h4>seu hotel</h4>
+
+                    </div>
+                    <h4>Aqui estão algumas sugestões para você:</h4>
                     <img src="fotos/resultados/etapas2.svg" class="etapas">
                     <img src="fotos/resultados/etapas3.svg" class="etapas">
 
