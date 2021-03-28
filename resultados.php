@@ -4,13 +4,15 @@
     $destino = $_SESSION['destino'];
     $orcamento = $_SESSION['milhasAcumuladas'];
     $milhasTotais = $_SESSION['milhasTotais']; 
+    $porcentagemCompleta = ($orcamento * 100)/$milhasTotais;
     $voos = $_SESSION['voos'];
     $hoteis = $_SESSION['hoteis'];  */
 
     //Variaveis para teste
     $destino = 'Chile';
-    $orcamento = 10000;
+    $orcamento = 35000;
     $milhasTotais = 70000;
+    $porcentagemCompleta = ($orcamento * 100)/$milhasTotais;
     $voos;
     $hoteis;
 ?>
@@ -29,10 +31,27 @@
     <body>
         <?php include 'header.php';?>
         <div class='container'>
-            <img src='fotos/quadroDeMilhas.svg' class='quadroDeMilhas'/>
+            <div class='calculoDeMilhas'>
+                <h1>Vamos fazer um planejamento financeiro para sua viagem para o <?php echo $destino?>!</h1>
+                <div class='relacao-de-milhas'>
+                    <div style="width: 50%; align-itens: flex-start;">
+                        <h5>Total acumulado</h5>
+                        <h5><?php echo $orcamento?> milhas</h5>
+                    </div>
+                    <div style="width: 50%; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end">
+                        <h5 style='margin-bottom: 1rem;'>Total necessário</h5>
+                        <h5 style='margin-top: 1rem;'><?php echo $milhasTotais?> milhas</h5>
+                    </div>
+                </div>
+                <div class='contorno-quadro-milhas'>
+                    <div class='preenche-quadro-milhas' style='width: <?php echo $porcentagemCompleta ?>%'></div>
+                </div>
+            </div>
+            <!-- <img src='fotos/quadroDeMilhas.svg' class='quadroDeMilhas'/> -->
+
             <div>
                 <button type='button' class='tabs-button' onclick="mostrarPrimeiro()" autofocus>Etapas</button>
-                <button type='button' class='tabs-button' onclick="mostrarSegundo()" autofocus>Gestão Financeira</button>
+                <button type='button' class='tabs-button' onclick="mostrarSegundo()">Gestão Financeira</button>
                 <button type='button' class='tabs-button' onclick="mostrarTerceiro()">Gerenciar viagem</button>
                 <button type='button' class='tabs-button' onclick="mostrarQuarto()">Adquirir milhas</button>
                 <button type='button' class='tabs-button' onclick="mostrarQuinto()">Painel de despesas pessoais</button>
@@ -69,8 +88,8 @@
                         <h4>Reserve com </h4><h4 style='color: #FF5A00'> antecedência </h4> <h4>seu hotel</h4>
 
                     </div>
-                    <h4>Aqui estão algumas sugestões para você:</h4>
-                    <img src="fotos/resultados/etapas2.svg" class="etapas">
+                    <!-- <h4>Aqui estão algumas sugestões para você:</h4> -->
+                    <!-- <img src="fotos/resultados/etapas2.svg" class="etapas"> -->
                     <img src="fotos/resultados/etapas3.svg" class="etapas">
 
                 </div>
@@ -78,62 +97,78 @@
 
             <div id='terceiro' style='display: none;'>
                 <div class="wrapper-boxes">
-                    <div class="box">
-                    <p class="title">Voo</p> 
-                        <div class="wrapper">
-                               
-                            <div class="esquerda">
-                                <div>
-                                    <p class="text"> GRU (São Paulo) > CDG (Paris) </p>
-                                    <p class="text"> CDG (Paris) > GRU (São Paulo) </p>
+                    <div class='botoes-gerencia-container'>
+                        <button class='botao-gerencia' id='gerencia1' onclick="mostrarGerencia1()" autofocus><p>Opções de voo</p></button>
+                        <button class='botao-gerencia' id='gerencia2' onclick="mostrarGerencia2()" ><p>Opções de hotel</p></button>
+                        <button class='botao-gerencia' id='gerencia3' onclick="mostrarGerencia3()" ><p>Suas reservas</p></button>
+                    </div>
+
+                    <div id='opcoes-voos' style='display: none;'>
+                        <div class="box">
+                        <p class="title">Voo</p> 
+                            <div class="wrapper">
+                                <div class="esquerda">
+                                    <div>
+                                        <p class="text"> GRU (São Paulo) > CDG (Paris) </p>
+                                        <p class="text"> CDG (Paris) > GRU (São Paulo) </p>
+                                    </div>
+                                    <div>
+                                        <p class="text"> 15 dias </p>
+                                        <p class="text"> Janeiro/2022 </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="text"> 15 dias </p>
-                                    <p class="text"> Janeiro/2022 </p>
-                                </div>
-                            </div>
-                            <div class="direita">
-                                <div>
-                                    <p style='text-align:center;' class="bigger-text">Total necessário </p>
-                                    <p style='text-align:center;' class="bigger-text"><b>170.000</b> milhas</p>
-                                </div>
-                                <div>
-                                    <p class="special-text"> Reserve agora e ganhe +500 bônus </p>
-                                </div>
-                                <div class="button-wrapper">
-                                    <button type='button' class='tabs-button' onClick="">Reservar</button>
-                                    <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
+                                <div class="direita">
+                                    <div>
+                                        <p style='text-align:center;' class="bigger-text">Total necessário </p>
+                                        <p style='text-align:center;' class="bigger-text"><b>170.000</b> milhas</p>
+                                    </div>
+                                    <div>
+                                        <p class="special-text"> Reserve agora e ganhe +500 bônus </p>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type='button' class='tabs-button' onClick="">Reservar</button>
+                                        <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="box">
-                    <p class="title">Hoteis</p>
-                        <div class="wrapper">
-                            <div class="esquerda">
-                                <div>
-                                    <p class="text"> Paris </p>
+
+                    <div id='opcoes-hoteis' style='display: none;'>
+                        <div class="box">
+                        <p class="title">Hoteis</p>
+                            <div class="wrapper">
+                                <div class="esquerda">
+                                    <div>
+                                        <p class="text"> Parisasdhaskdjhaskdj </p>
+                                        <p class="text"> sadhasjdhkajsdhaks</p>
+                                    </div>
+                                    <div>
+                                        <p class="text"> 15 dias </p>
+                                        <p class="text"> Janeiro/2022 </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="text"> 15 dias </p>
-                                    <p class="text"> Janeiro/2022 </p>
-                                </div>
-                            </div>
-                            <div class="direita">
-                                <div>
-                                    <p style='text-align:center;' class="bigger-text">Total necessário</p>
-                                    <p style='text-align:center;' class="bigger-text"><b>1.000.000</b> MILHAS</p>
-                                </div>
-                                <div>
-                                    <p class="special-text"> Continue juntando </p>
-                                </div>
-                                <div class="button-wrapper">
-                                    <button type='button' class='tabs-button' onClick="">Reservar</button>
-                                    <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
+                                <div class="direita">
+                                    <div>
+                                        <p style='text-align:center;' class="bigger-text">Total necessário</p>
+                                        <p style='text-align:center;' class="bigger-text"><b>1.000.000</b> MILHAS</p>
+                                    </div>
+                                    <div>
+                                        <p class="special-text"> Continue juntando </p>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type='button' class='tabs-button' onClick="">Reservar</button>
+                                        <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div id='minhas-reservas' style='display: none;'>
+                        <p>Minhas reservas</p>
+                    </div>
+                    
                 </div> 
             </div>
 
@@ -150,6 +185,7 @@
         <div class="footer">
             <?php include 'footer.php';?>
         </div>
+
         <script type='text/javascript'>
             function mostrarPrimeiro() {
                 document.getElementById('primeiro').style.display = "block";
@@ -185,6 +221,24 @@
                 document.getElementById('terceiro').style.display = "none";
                 document.getElementById('quarto').style.display = "none";
                 document.getElementById('quinto').style.display = "block";
+            }
+        </script>
+
+        <script type='text/javascript'>
+            function mostrarGerencia1() {
+                document.getElementById('opcoes-voos').style.display = "block";
+                document.getElementById('opcoes-hoteis').style.display = "none";
+                document.getElementById('minhas-reservas').style.display = "none";
+            }
+            function mostrarGerencia2() {
+                document.getElementById('opcoes-voos').style.display = "none";
+                document.getElementById('opcoes-hoteis').style.display = "block";
+                document.getElementById('minhas-reservas').style.display = "none";
+            }
+            function mostrarGerencia3() {
+                document.getElementById('opcoes-voos').style.display = "none";
+                document.getElementById('opcoes-hoteis').style.display = "none";
+                document.getElementById('minhas-reservas').style.display = "block";
             }
         </script>
 
