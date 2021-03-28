@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href='planejar.css'/>
+        <link rel="stylesheet" href='inicio.css'/>
     </head>
     <body>
         <?php include 'header.php';?>
@@ -23,9 +23,11 @@
             <div id='verCategorias' style='display: none;'>
                 <img src='fotos/categoriasDeViagem.svg'/>
             </div>
+            <div class='footer'>
+                <?php include 'footer.php';?>
+            </div>
         </div>
-
-        <?php include 'footer.php';?>
+        
 
         <script type='text/javascript'>
             function mostrarPrimeiro() {
