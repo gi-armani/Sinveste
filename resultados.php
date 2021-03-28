@@ -16,9 +16,10 @@
             <img src='fotos/quadroDeMilhas.svg' class='quadroDeMilhas'/>
             <div>
                 <button type='button' class='tabs-button' onclick="mostrarPrimeiro()" autofocus>Etapas</button>
-                <button type='button' class='tabs-button' onclick="mostrarSegundo()">Gerenciar viagem</button>
-                <button type='button' class='tabs-button' onclick="mostrarTerceiro()">Adquirir milhas</button>
-                <button type='button' class='tabs-button' onclick="mostrarQuarto()">Painel de despesas pessoais</button>
+                <button type='button' class='tabs-button' onclick="mostrarSegundo()" autofocus>Gestão Financeira</button>
+                <button type='button' class='tabs-button' onclick="mostrarTerceiro()">Gerenciar viagem</button>
+                <button type='button' class='tabs-button' onclick="mostrarQuarto()">Adquirir milhas</button>
+                <button type='button' class='tabs-button' onclick="mostrarQuinto()">Painel de despesas pessoais</button>
             </div>
 
             <div id='primeiro' >
@@ -26,6 +27,18 @@
             </div>
 
             <div id='segundo' style='display: none;'>
+                <h1>Invista no seu sonho, ainda não está tarde!</h1>
+                <div class='etapas-container'>
+                    <img src="fotos/resultados/etapas1.svg" class="etapas">
+                    <p>Reserve com <p style='color: #FF5A00'>antecedência</p> seu hotel</p>
+                    <p>Aqui estão algumas sugestões para você:</p>
+                    <img src="fotos/resultados/etapas2.svg" class="etapas">
+                    <img src="fotos/resultados/etapas3.svg" class="etapas">
+
+                </div>
+            </div>
+
+            <div id='terceiro' style='display: none;'>
                 <div class="wrapper-boxes">
                     <div class="box">
                     <p class="title">Voo</p> 
@@ -59,7 +72,6 @@
                     <div class="box">
                     <p class="title">Hoteis</p>
                         <div class="wrapper">
-                        
                             <div class="esquerda">
                                 <div>
                                     <p class="text"> Paris </p>
@@ -87,12 +99,14 @@
                 </div> 
             </div>
 
-            <div id='terceiro' style='display: none;'>
-                <h1>terceiro</h1>
-            </div>
-
             <div id='quarto' style='display: none;'>
-                <h1>quarto</h1>
+                <img src="fotos/resultados/adquirirMilhas.svg" class="adquirirMilhas">
+            </div>
+            <div id='quinto' style='display: none;'>
+                <div class="despesas-wrapper">
+                    <img src="fotos/resultados/despesas1.svg" class="despesas">
+                    <img src="fotos/resultados/despesas2.svg" class="despesas">
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -104,24 +118,35 @@
                 document.getElementById('segundo').style.display = "none";
                 document.getElementById('terceiro').style.display = "none";
                 document.getElementById('quarto').style.display = "none";
+                document.getElementById('quinto').style.display = "none";
             }
             function mostrarSegundo() {
                 document.getElementById('primeiro').style.display = "none";
                 document.getElementById('segundo').style.display = "block";
                 document.getElementById('terceiro').style.display = "none";
                 document.getElementById('quarto').style.display = "none";
+                document.getElementById('quinto').style.display = "none";
             }
             function mostrarTerceiro() {
                 document.getElementById('primeiro').style.display = "none";
                 document.getElementById('segundo').style.display = "none";
                 document.getElementById('terceiro').style.display = "block";
                 document.getElementById('quarto').style.display = "none";
+                document.getElementById('quinto').style.display = "none";
             }
             function mostrarQuarto() {
                 document.getElementById('primeiro').style.display = "none";
                 document.getElementById('segundo').style.display = "none";
                 document.getElementById('terceiro').style.display = "none";
                 document.getElementById('quarto').style.display = "block";
+                document.getElementById('quinto').style.display = "none";
+            }
+            function mostrarQuinto() {
+                document.getElementById('primeiro').style.display = "none";
+                document.getElementById('segundo').style.display = "none";
+                document.getElementById('terceiro').style.display = "none";
+                document.getElementById('quarto').style.display = "none";
+                document.getElementById('quinto').style.display = "block";
             }
         </script>
 
