@@ -1,3 +1,19 @@
+<?php
+    /* 
+    Variaveis de verdade
+    $destino = $_SESSION['destino'];
+    $orcamento = $_SESSION['milhasAcumuladas'];
+    $milhasTotais = $_SESSION['milhasTotais']; 
+    $voos = $_SESSION['voos'];
+    $hoteis = $_SESSION['hoteis'];  */
+
+    //Variaveis para teste
+    $destino = 'Chile';
+    $orcamento = 10000;
+    $milhasTotais = 70000;
+    $voos;
+    $hoteis;
+?>
 <!DOCTYPE html>
 <html>
     <head>

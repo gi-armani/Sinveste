@@ -21,21 +21,22 @@
                 <a href='https://www.smiles.com.br/descubra-seu-novo-destino'><button type='button' class='tabs-button' onclick="mostrarSegundo()" >Ainda não sei o meu destino</button></a>
             </div>
 
-            <div class='country-form' id='pesquisarDestino' style='display: none;'>
+            <form action='inicioBack.php' method='POST' class='country-form' id='pesquisarDestino' style='display: none;'>
                 <!-- <input type='text' placeholder="Pesquisar destino" name="destino"/> -->
                 <select placeholder="Pesquisar destino" name="destino">
-                    <option value="volvo">Cairo</option>
-                    <option value="saab">Bankok</option>
-                    <option value="mercedes">Salvador</option>
-                    <option value="audi">Rio de Janeiro</option>
-                    <option value="audi">Moscou</option>
-                    <option value="audi">Paris</option>
+                    <option value="">Selecione...</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Bankok">Bankok</option>
+                    <option value="Salvador">Salvador</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="Moscou">Moscou</option>
+                    <option value="Paris">Paris</option>
                 </select>
                 <input type='date' placeholder="Quando gostaria de fazer sua viagem?" name="data"/>
                 <input type='text' placeholder="Quantas milhas deseja utilizar?" name="orcamento"/>
                 <br>
-                <button type='button' class='search-button'>Continuar</button>
-            </div>
+                <button type='submit' class='search-button'>Continuar</button>
+            </form>
 
             <div id='verCategorias' style='display: none;'>
                 <a href="https://www.smiles.com.br/descubra-seu-novo-destino">
