@@ -1,0 +1,21 @@
+#footer {
+    background-color: #7D7D7D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 12rem;
+    padding: 2rem;
+}
+
+p {
+    color: #FFF;
+}
+
+.icon {
+    width: 2rem;
+    padding: 2rem;
+}
