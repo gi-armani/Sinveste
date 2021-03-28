@@ -1,14 +1,16 @@
 .img-main{
-    width: 99.2%;
-    height: 75%;
+    width: 100%;
+    height: 84%;
     position: absolute;
-    margin-top:0%;
+    margin-top:-3.5%;
+    margin-left: -2.4%;
 }
 
 .container{
     justify-content: center;
     align-items: center;
     flex-direction: 'column';
+    margin-top: -1.5%;
 }
 
 
@@ -16,7 +18,7 @@
     position: absolute;
     border-bottom: 2px solid #7D7D7D;
     margin-left:10%;
-    margin-bottom: -2%;
+    margin-bottom: -3%;
     margin-top: 2%;
     padding-right: 30%;
     padding-top:0%;
@@ -62,6 +64,7 @@
     padding-right: 2%;
     padding-left: 2%;
     padding-bottom: 2%;
+    margin-bottom: -5%;
 }
 
 .title{
@@ -75,28 +78,41 @@
 }
 
 .estatico{
-    width: 99%;
+    width: 100%;
     margin-top: 71%;
     position: absolute;
-    margin-left:0%;
+    margin-left:-3%;
+    height: 310%;
 }
 
 .planejar{
     background-color: #23256E;
-    width: 15rem;
+    width: 25%;
     height: 4rem;
     border-radius: 10px;
     box-shadow: 0px 0px 0px 0px #FF5A00;
-    margin-left: 77%;
-    margin-top: 200%;
+    margin-left: 72%;
+    margin-top: 205%;
     border-color: #23256E;
     color: white;
     font-family: Jost;
-    font-size: 1rem;
+    font-size: 20px;
     position: absolute;
 }
 
 .body{
     align-items: center;
+    width: 100%;
 }
 
+.footer{
+    position: relative;
+    margin-top: 216%;
+    height: 1%;
+    width:100%;
+}
+
+.wrapper{
+    width: 100%;
+    
+}

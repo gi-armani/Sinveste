@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 99%
 }
 
 .logo {
@@ -11,7 +12,7 @@
     padding: 2rem;
 }
 
-p {
+.text-footer {
     color: #FFF;
 }
 
