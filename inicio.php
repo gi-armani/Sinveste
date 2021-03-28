@@ -13,12 +13,13 @@
                 <button type='button' class='tabs-button' onclick="mostrarSegundo()">Ainda não sei o meu destino</button>
             </div>
 
-            <form class='country-form' id='pesquisarDestino' style='display: none;'>
+            <div class='country-form' id='pesquisarDestino' style='display: none;'>
                 <input type='text' placeholder="Pesquisar destino"/>
                 <input type='date' placeholder="Quando gostaria de fazer sua viagem?"/>
                 <input type='text' placeholder="Quantas milhas deseja utilizar?"/>
-                <button type='submit' class='search-button'>Continuar</button>
-            </form>
+                <br>
+                <button type='button' class='search-button'>Continuar</button>
+            </div>
 
             <div id='verCategorias' style='display: none;'>
                 <img src='fotos/categoriasDeViagem.svg'/>

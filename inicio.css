@@ -31,24 +31,26 @@ h1 {
 
 .country-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 .country-form input {
     height: 2rem;
-    width: 45rem;
-    border-top-left-radius: .5rem;
-    border-bottom-left-radius: .5rem;
+    width: 60%;
+    border-radius: .5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-left: 20%;
 }
 
 .search-button {
-    width: 6rem;
+    width: 40%;
     height: 2.4rem;
+    margin-left: 30%;
     background: #5D3189;
+    color: #fff;
     border-radius: .5rem;
 }
 
