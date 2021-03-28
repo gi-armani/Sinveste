@@ -47,7 +47,7 @@ h1 {
 
 .title{
     font-weight: bold;
-    font-size: 26px;
+    font-size: 28px;
     color: #FF5A00;
     margin-left:2%;
     width: 40%;
@@ -66,12 +66,12 @@ h1 {
 }
 
 .text{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: regular;
 }
 
 .bigger-text{
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
 }
 

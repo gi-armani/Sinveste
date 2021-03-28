@@ -3,6 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="resultados.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
     </head>
     <body>
         <?php include 'header.php';?>
@@ -37,7 +43,7 @@
                             </div>
                             <div class="direita">
                                 <div>
-                                    <p style='text-align:center;' class="bigger-text">TOTAL NECESSÁRIO </p>
+                                    <p style='text-align:center;' class="bigger-text">Total necessário </p>
                                     <p style='text-align:center;' class="bigger-text"><b>170.000</b> milhas</p>
                                 </div>
                                 <div>
@@ -65,7 +71,7 @@
                             </div>
                             <div class="direita">
                                 <div>
-                                    <p style='text-align:center;' class="bigger-text">TOTAL NECESSÁRIO</p>
+                                    <p style='text-align:center;' class="bigger-text">Total necessário</p>
                                     <p style='text-align:center;' class="bigger-text"><b>1.000.000</b> MILHAS</p>
                                 </div>
                                 <div>
