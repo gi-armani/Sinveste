@@ -3,6 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="resultados.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
     </head>
     <body>
         <?php include 'header.php';?>
@@ -16,11 +22,69 @@
             </div>
 
             <div id='primeiro' >
-                <h1>primeiro</h1>
+                <h1>segundo</h1>
             </div>
 
             <div id='segundo' style='display: none;'>
-                <h1>segundo</h1>
+                <div class="wrapper-boxes">
+                    <div class="box">
+                    <p class="title">Voo</p> 
+                        <div class="wrapper">
+                               
+                            <div class="esquerda">
+                                <div>
+                                    <p class="text"> GRU (São Paulo) > CDG (Paris) </p>
+                                    <p class="text"> CDG (Paris) > GRU (São Paulo) </p>
+                                </div>
+                                <div>
+                                    <p class="text"> 15 dias </p>
+                                    <p class="text"> Janeiro/2022 </p>
+                                </div>
+                            </div>
+                            <div class="direita">
+                                <div>
+                                    <p style='text-align:center;' class="bigger-text">Total necessário </p>
+                                    <p style='text-align:center;' class="bigger-text"><b>170.000</b> milhas</p>
+                                </div>
+                                <div>
+                                    <p class="special-text"> Reserve agora e ganhe +500 bônus </p>
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type='button' class='tabs-button' onClick="">Reservar</button>
+                                    <button type='button' class='tabs-button' onClick="">Diminuir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                    <p class="title">Hoteis</p>
+                        <div class="wrapper">
+                        
+                            <div class="esquerda">
+                                <div>
+                                    <p class="text"> Paris </p>
+                                </div>
+                                <div>
+                                    <p class="text"> 15 dias </p>
+                                    <p class="text"> Janeiro/2022 </p>
+                                </div>
+                            </div>
+                            <div class="direita">
+                                <div>
+                                    <p style='text-align:center;' class="bigger-text">Total necessário</p>
+                                    <p style='text-align:center;' class="bigger-text"><b>1.000.000</b> MILHAS</p>
+                                </div>
+                                <div>
+                                    <p class="special-text"> Continue juntando </p>
+                                </div>
+                                <div class="button-wrapper">
+                                    <button type='button' class='tabs-button' onClick="">Reservar</button>
+                                    <button type='button' class='tabs-button' onClick="">Diminuir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
 
             <div id='terceiro' style='display: none;'>
@@ -31,9 +95,9 @@
                 <h1>quarto</h1>
             </div>
         </div>
-
-        <?php include 'footer.php';?>
-
+        <div class="footer">
+            <?php include 'footer.php';?>
+        </div>
         <script type='text/javascript'>
             function mostrarPrimeiro() {
                 document.getElementById('primeiro').style.display = "block";

@@ -28,3 +28,90 @@ h1 {
     font-size: 2rem;
     color: #FF5A00;
 }
+
+.box{
+    margin-right:5%;
+    margin-left:7%;
+    width: 130%;
+    margin-top: 5%;
+    height: 20%;
+    border: 2px solid #FF5A00;
+    border-radius: 20px;
+    text-align: left;
+    align-items: center;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 8%;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 28px;
+    color: #FF5A00;
+    margin-left:2%;
+    width: 40%;
+    margin-right: 0%;
+    margin-top: 5%;
+}
+
+.footer{
+    margin-top:0%;
+}
+
+.special-text{
+    font-size: 24px;
+    font-weight: bold;
+    color: #5D3189;
+}
+
+.text{
+    font-size: 20px;
+    font-weight: regular;
+}
+
+.bigger-text{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.wrapper{
+    justify-content: space-between;
+    display: flex;
+    padding-left:2%;
+    flex-direction: row;
+}
+
+.esquerda{
+    margin-right: 5%;
+}
+
+.esquerda-items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.direita{
+    margin-left: 5%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    margin-top:-5%;
+}
+
+.button-wrapper{
+    flex-direction: row;
+    display: flex;
+}
+
+.wrapper-boxes{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+
