@@ -27,12 +27,14 @@ CREATE TABLE IF NOT EXISTS `viagens` (
     `preco` int(11) NOT NULL, 
     `data` date NOT NULL, 
     `orcamento_atual` int(11) NOT NULL, 
+    `partidaId` int(11) NOT NULL,
     `destinoId` int(11) NOT NULL, 
     `usuarioId` int(11) NOT NULL, 
     `valor_parcelas`int(11) NOT NULL, 
     `num_parcelas` int(11) NOT NULL,
     PRIMARY KEY (`id`),
     KEY `destinoId` (`destinoId`),
+    KEY `partidaId` (`partidaId`),
     KEY `usuarioId` (`usuarioId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -56,10 +58,12 @@ CREATE TABLE IF NOT EXISTS `voos`(
     `id` int(11) NOT NULL AUTO_INCREMENT,    
     `duracao` time, 
     `data` date NOT NULL, 
+    `partidaId` int(11) NOT NULL,
     `destinoId` int(11) NOT NULL,
     `viagem` int(11) NOT NULL,
     PRIMARY KEY (`id`),
-    KEY `destinoId` (`destinoId`)
+    KEY `destinoId` (`destinoId`),
+    KEY `partidaId` (`partidaId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `hoteis`;
@@ -93,15 +97,21 @@ CREATE TABLE IF NOT EXISTS `hoteisViagens`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `viagens`
-  ADD CONSTRAINT `viagens_ibfk_1` FOREIGN KEY (`destinoId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `viagens_ibfk_1` FOREIGN KEY (`destinoId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `viagens`  
+  ADD CONSTRAINT `viagens_ibfk_3` FOREIGN KEY (`partidaId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `viagens`  
   ADD CONSTRAINT `viagens_ibfk_2` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `planejamentos`
-  ADD CONSTRAINT `planejamento_ibfk_1` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `planejamento_ibfk_1` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `planejamentos`
   ADD CONSTRAINT `planejamento_ibfk_2` FOREIGN KEY (`viagemId`) REFERENCES `viagens` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `voos`
   ADD CONSTRAINT `voos_ibfk_1` FOREIGN KEY (`destinoId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `voos`
+  ADD CONSTRAINT `voos_ibfk_2` FOREIGN KEY (`partidaId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `hoteis`
   ADD CONSTRAINT `hoteis_ibfk_1` FOREIGN KEY (`localId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

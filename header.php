@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="header">
-            <img src='fotos/logo.svg'/>
+            <a href="index.php"> <img src='fotos/logo.svg'/> </a>
             <div id='menu'>
                 <ul>
                     <li><a href="">Ajuda</a></li>
@@ -27,8 +27,8 @@
         
         <div id='submenu'>
             <ul>
-                <li><a href="">Clube Smiles</a></li>
-                <li><a href="">Sinveste</a></li>
+                <li><a href="https://www.smiles.com.br/clube-smiles">Clube Smiles</a></li>
+                <li><a href="index.php">Sinveste</a></li>
             </ul>
 
         </div>

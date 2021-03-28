@@ -34,11 +34,11 @@
                 <p class="text"> Investindo mensalmente, você pode desfrutar da <b>melhor viagem</b> da vida 
                     <b>sem endividamento</b>. E o melhor de tudo: ainda receberá milhas bônus por isso!</p>
                 <p class="text">Você não vai querer deixar para planejar sua viagem no último momento, né?</p>
-                <button class="button">Saiba mais</button>
+                <a href="inicio.php"> <button class="button">Saiba mais</button> </a>
             </div>
             <div class="wrapper">
                 <img class="estatico" src="fotos/estático.svg">
-                <button class="planejar">Quero planejar a minha viagem</button>
+                <a href="inicio.php"> <button class="planejar">Quero planejar a minha viagem</button> </a>
             </div>
         </div>
         <div class="footer">

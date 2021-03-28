@@ -22,15 +22,17 @@
             </div>
 
             <div class='country-form' id='pesquisarDestino' style='display: none;'>
-                <input type='text' placeholder="Pesquisar destino"/>
-                <input type='date' placeholder="Quando gostaria de fazer sua viagem?"/>
-                <input type='text' placeholder="Quantas milhas deseja utilizar?"/>
+                <input type='text' placeholder="Pesquisar destino" name="destino"/>
+                <input type='date' placeholder="Quando gostaria de fazer sua viagem?" name="data"/>
+                <input type='text' placeholder="Quantas milhas deseja utilizar?" name="orcamento"/>
                 <br>
                 <button type='button' class='search-button'>Continuar</button>
             </div>
 
             <div id='verCategorias' style='display: none;'>
-                <img src='fotos/categoriasDeViagem.svg'/>
+                <a href="https://www.smiles.com.br/descubra-seu-novo-destino">
+                    <img src='fotos/categoriasDeViagem.svg'/>
+                </a>
             </div>
             <div class='footer'>
                 <?php include 'footer.php';?>
