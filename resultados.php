@@ -86,7 +86,7 @@
                                 </div>
                                 <div class="button-wrapper">
                                     <button type='button' class='tabs-button' onClick="">Reservar</button>
-                                    <button type='button' class='tabs-button' onClick="">Diminuir</button>
+                                    <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
                                 </div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="button-wrapper">
                                     <button type='button' class='tabs-button' onClick="">Reservar</button>
-                                    <button type='button' class='tabs-button' onClick="">Diminuir</button>
+                                    <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
                                 </div>
                             </div>
                         </div>
