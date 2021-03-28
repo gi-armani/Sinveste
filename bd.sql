@@ -96,16 +96,12 @@ ALTER TABLE `viagens`
   ADD CONSTRAINT `viagens_ibfk_1` FOREIGN KEY (`destinoId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `viagens_ibfk_2` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
 ALTER TABLE `planejamentos`
   ADD CONSTRAINT `planejamento_ibfk_1` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `planejamento_ibfk_2` FOREIGN KEY (`viagemId`) REFERENCES `viagens` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
-
 ALTER TABLE `voos`
   ADD CONSTRAINT `voos_ibfk_1` FOREIGN KEY (`destinoId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
 
 ALTER TABLE `hoteis`
   ADD CONSTRAINT `hoteis_ibfk_1` FOREIGN KEY (`localId`) REFERENCES `destinos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
@@ -126,6 +122,6 @@ ALTER TABLE voosviagens
     REFERENCES voos(id);
     
 ALTER TABLE voosviagens
-    ADD CONSTRAINT fk_viagens_id
+    ADD CONSTRAINT fk_viagens_id2
     FOREIGN KEY (viagemId)
     REFERENCES viagens(id);

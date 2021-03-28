@@ -1,0 +1,102 @@
+.img-main{
+    width: 99.2%;
+    height: 75%;
+    position: absolute;
+    margin-top:0%;
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+    flex-direction: 'column';
+}
+
+
+.div-title{
+    position: absolute;
+    border-bottom: 2px solid #7D7D7D;
+    margin-left:10%;
+    margin-bottom: -2%;
+    margin-top: 2%;
+    padding-right: 30%;
+    padding-top:0%;
+    height: 13%;
+}
+
+
+
+.title2{
+    font-size: 26px;
+    color: #FF5A00;
+}
+
+.text{
+    font-size: 22px;
+}
+
+.button{
+    background-color: #FF5A00;
+    border-color: #FF5A00;
+    border-radius: 10px;
+    box-shadow: none;
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+    position: absolute;
+    width: 12%;
+    height: 18%;
+    margin-left: 80%;
+    margin-top: -5%;
+}
+
+.box{
+    margin-right:5%;
+    margin-left:7%;
+    width: 80%;
+    margin-top: 38%;
+    position: absolute;
+    border: 2px solid #FF5A00;
+    border-radius: 20px;
+    text-align: left;
+    align-items: center;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+}
+
+.title{
+    color: #FF5A00;
+    font-size: 40px;
+    font-weight: bold;
+    @font-face {
+        font-family: Jost;
+        src: url(indestructibletype.com/fonts/Jost.css);
+    }
+}
+
+.estatico{
+    width: 99%;
+    margin-top: 71%;
+    position: absolute;
+    margin-left:0%;
+}
+
+.planejar{
+    background-color: #23256E;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 0px #FF5A00;
+    margin-left: 77%;
+    margin-top: 200%;
+    border-color: #23256E;
+    color: white;
+    font-family: Jost;
+    font-size: 1rem;
+    position: absolute;
+}
+
+.body{
+    align-items: center;
+}
+
