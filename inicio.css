@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.7rem;
+    color: #FF5A00;
+}
+
+.tabs-button {
+    padding: 1rem;
+    margin: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: 2px solid #FF5A00;
+    border-radius: 1rem;
+    border-color: #FF5A00;
+    margin: #FF5A00;
+    background-color: #fff;
+}
+
+.country-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.country-form input {
+    height: 2rem;
+    width: 45rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.search-button {
+    width: 6rem;
+    height: 2.4rem;
+    background: #5D3189;
+    border-radius: .5rem;
+}
+
+#verCategorias img {
+    width: 60rem;
+    height: auto;
+}
