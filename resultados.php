@@ -1,21 +1,62 @@
 <?php
-    /* 
-    Variaveis de verdade
-    $destino = $_SESSION['destino'];
-    $orcamento = $_SESSION['milhasAcumuladas'];
-    $milhasTotais = $_SESSION['milhasTotais']; 
-    $porcentagemCompleta = ($orcamento * 100)/$milhasTotais;
-    $voos = $_SESSION['voos'];
-    $hoteis = $_SESSION['hoteis'];  */
+    require_once('conexao.php');
+    session_start();
+    
+    if(!$conexao) {
+        die("Erro: " .mysqli_error($conexao));
+    }
 
-    //Variaveis para teste
-    $destino = 'Chile';
-    $orcamento = 35000;
-    $milhasTotais = 70000;
-    $porcentagemCompleta = ($orcamento * 100)/$milhasTotais;
-    $voos;
+    $destino = mysqli_real_escape_string($conexao, $_POST['destino']);
+    $data = mysqli_real_escape_string($conexao, $_POST['data']);
+    $orcamento = mysqli_real_escape_string($conexao, $_POST['orcamento']);
+
+    $destinoId;
+    $query = "select id from destinos where nome='${destino}';";
+    $resultado = mysqli_query($conexao, $query);
+    if(mysqli_num_rows($resultado)){
+        $dados = mysqli_fetch_assoc($resultado);
+        $destinoId =  $dados["id"];
+    }
+
+    $milhasTotais;
+    $query = "select preco from viagens where destinoId=${destinoId};"; 
+    $resultado = mysqli_query($conexao, $query);
+    if(mysqli_num_rows($resultado)){
+        $dados = mysqli_fetch_assoc($resultado);
+        $milhasTotais =  $dados["preco"];
+    }
+    
+
+    $orcamento_atual;
+    $query = "select orcamento_atual from viagens where destinoId={$destinoId};";
+    $resultado = mysqli_query($conexao, $query);
+    if(mysqli_num_rows($resultado)){
+        $dados = mysqli_fetch_assoc($resultado);    
+        $orcamento_atual = $dados["orcamento_atual"];
+    }
+
+    $voos;    
+    $query = "select * from voos where destinoId=${destinoId};"; 
+    $resultado = mysqli_query($conexao, $query);
+    if(mysqli_num_rows($resultado)){
+        $voos = $resultado;
+    }
+    
     $hoteis;
-?>
+    $query = "select * from hoteis where localId=${destinoId}"; 
+    $resultado = mysqli_query($conexao, $query);
+    if(mysqli_num_rows($resultado)){
+        $hoteis = $resultado;
+    }
+
+        //Variaveis para teste
+        /* $destino = 'Chile';
+        $orcamento = 35000;
+        $milhasTotais = 70000;
+        $porcentagemCompleta = ($orcamento * 100)/$milhasTotais;
+        $voos;
+        $hoteis; */
+    ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -104,17 +145,36 @@
                     </div>
 
                     <div id='opcoes-voos' style='display: none;'>
+                        <?php
+                            while($row = mysqli_fetch_array($voos, MYSQLI_ASSOC)){
+                                $partida; 
+                                $destino;
+                                $partidaId = $row['partidaId'];
+                                $query = "select nome from destinos where id=${partidaId}";
+                                $resultado = mysqli_query($conexao, $query);
+                                if(mysqli_num_rows($resultado)){
+                                    $dados = mysqli_fetch_assoc($resultado);
+                                    $partida = $dados['nome'];
+                                }
+                                $destinoId = $row['destinoId'];
+                                $query = "select nome from destinos where id=${destinoId}";
+                                $resultado = mysqli_query($conexao, $query);
+                                if(mysqli_num_rows($resultado)){
+                                    $dados = mysqli_fetch_assoc($resultado);
+                                    $destino = $dados['nome'];
+                                }
+                        ?>
                         <div class="box">
-                        <p class="title">Voo</p> 
+                        <!-- <p class="title">Voo</p>  -->
                             <div class="wrapper">
                                 <div class="esquerda">
                                     <div>
-                                        <p class="text"> GRU (São Paulo) > CDG (Paris) </p>
-                                        <p class="text"> CDG (Paris) > GRU (São Paulo) </p>
+                                        <p class="text"> <?php echo $partida?> </p>
+                                        <p class="text"> <?php echo $destino?> </p>
                                     </div>
                                     <div>
-                                        <p class="text"> 15 dias </p>
-                                        <p class="text"> Janeiro/2022 </p>
+                                        <p class="text"> <?php echo $row['duracao']?> </p>
+                                        <p class="text"> <?php echo $row['data']?> </p>
                                     </div>
                                 </div>
                                 <div class="direita">
@@ -133,18 +193,27 @@
                             </div>
                         </div>
                     </div>
+                    
+                
+                    <?php  } ?>
 
                     <div id='opcoes-hoteis' style='display: none;'>
+                        <?php     
+                            while($row = mysqli_fetch_array($hoteis, MYSQLI_ASSOC)){
+                                echo $row['nome'];
+                            
+                        ?>
                         <div class="box">
                         <p class="title">Hoteis</p>
                             <div class="wrapper">
                                 <div class="esquerda">
                                     <div>
-                                        <p class="text"> Parisasdhaskdjhaskdj </p>
-                                        <p class="text"> sadhasjdhkajsdhaks</p>
+                                        <p class="text"> <?php echo $row['nome']; ?> </p>
+                                        <p class="text"> <?php echo $destino; ?> </p>
+                                        
                                     </div>
                                     <div>
-                                        <p class="text"> 15 dias </p>
+                                        <p class="text"> <?php echo $row['nome']; </p>
                                         <p class="text"> Janeiro/2022 </p>
                                     </div>
                                 </div>
@@ -165,6 +234,8 @@
                         </div>
                     </div>
 
+                    <?php } ?>
+                
                     <div id='minhas-reservas' style='display: none;'>
                         <p>Minhas reservas</p>
                     </div>

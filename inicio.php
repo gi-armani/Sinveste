@@ -21,7 +21,7 @@
                 <a href='https://www.smiles.com.br/descubra-seu-novo-destino'><button type='button' class='tabs-button' onclick="mostrarSegundo()" >Ainda não sei o meu destino</button></a>
             </div>
 
-            <form action='inicioBack.php' method='POST' class='country-form' id='pesquisarDestino' style='display: none;'>
+            <form action='resultados.php' method='POST' class='country-form' id='pesquisarDestino' style='display: none;'>
                 <!-- <input type='text' placeholder="Pesquisar destino" name="destino"/> -->
                 <select placeholder="Pesquisar destino" name="destino">
                     <option value="">Selecione...</option>

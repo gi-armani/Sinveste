@@ -35,12 +35,14 @@ if(mysqli_num_rows($resultado)){
     $orcamento_atual = $dados["orcamento_atual"];
 }
 
-$voos;
+
+$voos;    
 $query = "select * from voos where destinoId=${destinoId};"; 
 $resultado = mysqli_query($conexao, $query);
 if(mysqli_num_rows($resultado)){
-    $voos = mysqli_fetch_assoc($resultado);
+    $voos = $resultado;
 }
+
 
 $hoteis;
 $query = "select * from hoteis where localId=${destinoId}"; 
@@ -61,6 +63,14 @@ $_SESSION['milhasTotais'] = $milhasTotais;
 $_SESSION['voos'] = $voos;
 $_SESSION['hoteis'] = $hoteis; 
 
+/*var_dump($voos);
+echo '<br><br>';
+foreach($voos as $voo) {
+    var_dump($voo);
+    echo $voo[0];
+    echo '<br><br>';
+}*/
+
 
 header('Location: resultados.php');
-exit();
+exit(); 
