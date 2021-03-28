@@ -1,7 +1,7 @@
 <?php
     require_once('conexao.php');
     session_start();
-    
+
     if(!$conexao) {
         die("Erro: " .mysqli_error($conexao));
     }
@@ -41,6 +41,8 @@
     if(mysqli_num_rows($resultado)){
         $voos = $resultado;
     }
+    $voos2 = $voos;
+    var_dump($voos2);
     
     $hoteis;
     $query = "select * from hoteis where localId=${destinoId}"; 
@@ -49,13 +51,19 @@
         $hoteis = $resultado;
     }
 
-        //Variaveis para teste
-        /* $destino = 'Chile';
-        $orcamento = 35000;
-        $milhasTotais = 70000;
-        $porcentagemCompleta = ($orcamento * 100)/$milhasTotais;
-        $voos;
-        $hoteis; */
+    $porcentagemCompleta = ($orcamento * 100)/$milhasTotais;
+
+    $novaData;
+    function trataData($data) {
+        $dataExplodida = explode('-', $data);
+        $ano = $dataExplodida[0];
+        $mes = $dataExplodida[1];
+        $dia = $dataExplodida[2];
+
+        $novaData = "${dia}/${mes}/${ano}";
+        return $novaData;
+    }
+
     ?>
 <!DOCTYPE html>
 <html>
@@ -144,7 +152,7 @@
                         <button class='botao-gerencia' id='gerencia3' onclick="mostrarGerencia3()" ><p>Suas reservas</p></button>
                     </div>
 
-                    <div id='opcoes-voos' style='display: none;'>
+                    <div id='opcoes-voos'>
                         <?php
                             while($row = mysqli_fetch_array($voos, MYSQLI_ASSOC)){
                                 $partida; 
@@ -174,13 +182,13 @@
                                     </div>
                                     <div>
                                         <p class="text"> <?php echo $row['duracao']?> </p>
-                                        <p class="text"> <?php echo $row['data']?> </p>
+                                        <p class="text"> <?php echo trataData($row['data']) ?> </p>
                                     </div>
                                 </div>
                                 <div class="direita">
                                     <div>
                                         <p style='text-align:center;' class="bigger-text">Total necessário </p>
-                                        <p style='text-align:center;' class="bigger-text"><b>170.000</b> milhas</p>
+                                        <p style='text-align:center;' class="bigger-text"><b><?php echo $row['valor']?></b> milhas</p>
                                     </div>
                                     <div>
                                         <p class="special-text"> Reserve agora e ganhe +500 bônus </p>
@@ -200,11 +208,10 @@
                     <div id='opcoes-hoteis' style='display: none;'>
                         <?php     
                             while($row = mysqli_fetch_array($hoteis, MYSQLI_ASSOC)){
-                                echo $row['nome'];
                             
                         ?>
                         <div class="box">
-                        <p class="title">Hoteis</p>
+                        <!-- <p class="title">Hoteis</p> -->
                             <div class="wrapper">
                                 <div class="esquerda">
                                     <div>
@@ -213,20 +220,19 @@
                                         
                                     </div>
                                     <div>
-                                        <p class="text"> <?php echo $row['nome']; </p>
-                                        <p class="text"> Janeiro/2022 </p>
+                                        <p class="text"> <?php echo $novaData; ?> </p>
                                     </div>
                                 </div>
                                 <div class="direita">
                                     <div>
                                         <p style='text-align:center;' class="bigger-text">Total necessário</p>
-                                        <p style='text-align:center;' class="bigger-text"><b>1.000.000</b> MILHAS</p>
+                                        <p style='text-align:center;' class="bigger-text"><b> <?php echo $row['valor']; ?></b> milhas</p>
                                     </div>
                                     <div>
                                         <p class="special-text"> Continue juntando </p>
                                     </div>
                                     <div class="button-wrapper">
-                                        <button type='button' class='tabs-button' onClick="">Reservar</button>
+                                        <button type='button' class='tabs-button'>Reservar</button>
                                         <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
                                     </div>
                                 </div>
@@ -237,8 +243,57 @@
                     <?php } ?>
                 
                     <div id='minhas-reservas' style='display: none;'>
-                        <p>Minhas reservas</p>
+                        <?php
+                            while($row = mysqli_fetch_array($voos2, MYSQLI_ASSOC)){
+                                $partida; 
+                                $destino;
+                                $partidaId = $row['partidaId'];
+                                $query = "select nome from destinos where id=${partidaId}";
+                                $resultado = mysqli_query($conexao, $query);
+                                if(mysqli_num_rows($resultado)){
+                                    $dados = mysqli_fetch_assoc($resultado);
+                                    $partida = $dados['nome'];
+                                }
+                                $destinoId = $row['destinoId'];
+                                $query = "select nome from destinos where id=${destinoId}";
+                                $resultado = mysqli_query($conexao, $query);
+                                if(mysqli_num_rows($resultado)){
+                                    $dados = mysqli_fetch_assoc($resultado);
+                                    $destino = $dados['nome'];
+                                }
+                        ?>
+                        <div class="box">
+                        <!-- <p class="title">Voo</p>  -->
+                            <div class="wrapper">
+                                <div class="esquerda">
+                                    <div>
+                                        <p class="text"> <?php echo $partida?> </p>
+                                        <p class="text"> <?php echo $destino?> </p>
+                                    </div>
+                                    <div>
+                                        <p class="text"> <?php echo $row['duracao']?> </p>
+                                        <p class="text"> <?php echo trataData($row['data']) ?> </p>
+                                    </div>
+                                </div>
+                                <div class="direita">
+                                    <div>
+                                        <p style='text-align:center;' class="bigger-text">Total necessário </p>
+                                        <p style='text-align:center;' class="bigger-text"><b><?php echo $row['valor']?></b> milhas</p>
+                                    </div>
+                                    <div>
+                                        <p class="special-text"> Reserve agora e ganhe +500 bônus </p>
+                                    </div>
+                                    <div class="button-wrapper">
+                                        <button type='button' class='tabs-button' onClick="">Reservar</button>
+                                        <!-- <button type='button' class='tabs-button' onClick="">Diminuir</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
+                    <?php  } ?>
+                
                     
                 </div> 
             </div>
@@ -246,12 +301,14 @@
             <div id='quarto' style='display: none;'>
                 <img src="fotos/resultados/adquirirMilhas.svg" class="adquirirMilhas">
             </div>
+
             <div id='quinto' style='display: none;'>
                 <div class="despesas-wrapper">
                     <img src="fotos/resultados/despesas1.svg" class="despesas">
                     <img src="fotos/resultados/despesas2.svg" class="despesas">
                 </div>
             </div>
+            
         </div>
         <div class="footer">
             <?php include 'footer.php';?>
