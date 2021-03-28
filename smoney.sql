@@ -60,7 +60,8 @@ INSERT INTO `destinos` (`id`, `nome`, `praia`, `frio`, `familia`, `historia`, `n
 CREATE TABLE `hoteis` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `localId` int(11) NOT NULL
+  `localId` int(11) NOT NULL, 
+  `valor`int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -175,7 +176,8 @@ CREATE TABLE `voos` (
   `duracao` time DEFAULT NULL,
   `data` date NOT NULL,
   `partidaId` int(11) NOT NULL,
-  `destinoId` int(11) NOT NULL
+  `destinoId` int(11) NOT NULL,
+  `valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
