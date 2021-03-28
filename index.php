@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+       
         <meta charset="utf-8">
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -8,10 +9,14 @@
     </head>
 
     <body class="body">
+        <div>
+            <?php include 'header.php'?>
+        </div>
         <div class="container">
             <img class="img-main" src="fotos/fotoTuristas.svg">
             <div class="div-title">
                 <p class="title"> Sinveste </p>
+                <div class="line"></div>
             </div>
             <div class="line"></div>
             <div class="box">
@@ -25,10 +30,13 @@
                 <p class="text">Você não vai querer deixar para planejar sua viagem no último momento, né?</p>
                 <button class="button">Saiba mais</button>
             </div>
-            <div>
-                <img class="estatico" src="fotos/estatico.svg">
+            <div class="wrapper">
+                <img class="estatico" src="fotos/estático.svg">
                 <button class="planejar">Quero planejar a minha viagem</button>
             </div>
+        </div>
+        <div class="footer">
+            <?php include 'footer.php'?>
         </div>
     </body>
 </html>
