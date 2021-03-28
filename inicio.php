@@ -18,16 +18,25 @@
             <h1>Quero planejar minha viagem:</h1>
             <div>
                 <button type='button' class='tabs-button' onclick="mostrarPrimeiro()">Já sei para onde quero ir</button>
-                <button type='button' class='tabs-button' onclick="mostrarSegundo()">Ainda não sei o meu destino</button>
+                <a href='https://www.smiles.com.br/descubra-seu-novo-destino'><button type='button' class='tabs-button' onclick="mostrarSegundo()" >Ainda não sei o meu destino</button></a>
             </div>
 
-            <div class='country-form' id='pesquisarDestino' style='display: none;'>
-                <input type='text' placeholder="Pesquisar destino" name="destino"/>
+            <form action='inicioBack.php' method='POST' class='country-form' id='pesquisarDestino' style='display: none;'>
+                <!-- <input type='text' placeholder="Pesquisar destino" name="destino"/> -->
+                <select placeholder="Pesquisar destino" name="destino">
+                    <option value="">Selecione...</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Bankok">Bankok</option>
+                    <option value="Salvador">Salvador</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="Moscou">Moscou</option>
+                    <option value="Paris">Paris</option>
+                </select>
                 <input type='date' placeholder="Quando gostaria de fazer sua viagem?" name="data"/>
                 <input type='text' placeholder="Quantas milhas deseja utilizar?" name="orcamento"/>
                 <br>
-                <button type='button' class='search-button'>Continuar</button>
-            </div>
+                <button type='submit' class='search-button'>Continuar</button>
+            </form>
 
             <div id='verCategorias' style='display: none;'>
                 <a href="https://www.smiles.com.br/descubra-seu-novo-destino">
@@ -47,7 +56,7 @@
             }
             function mostrarSegundo() {
                 document.getElementById('pesquisarDestino').style.display = "none";
-                document.getElementById('verCategorias').style.display = "block";
+                /* document.getElementById('verCategorias').style.display = "block"; */
             }
         </script>
     </body>
