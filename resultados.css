@@ -5,9 +5,64 @@
     justify-content: center;
 }
 
-.financeiro-fotos {
-    width: 20rem;
-    height: auto;
+h1 {
+    font-size: 2rem;
+    color: #FF5A00;
+}
+
+.relacao-de-milhas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.contorno-quadro-milhas {
+    width: 100%;
+    height: 2.5rem;
+    border: .5px solid black;
+    border-radius: 5rem;
+    z-index: 1;
+    margin-bottom: 2rem;
+}
+
+.preenche-quadro-milhas {
+    margin-bottom: 2rem;
+    height: 2.4rem;
+    background-color: #5D3189;
+    border: .5px solid black;
+    border-radius: 5rem;
+    z-index: 1;
+}
+
+.tabs-button {
+    padding: 1rem;
+    margin: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: 2px solid #FF5A00;
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+.tabs-button:focus {
+    background-color: #FF5A00;
+    color: #fff;
+    border: 2px solid #FF5A00;
+    border-radius: 1rem;
+    outline: 0;
+}
+
+.despesas{
+    width:70%;
+    height:60%;
+}
+
+.despesas-wrapper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .etapas-container {
@@ -49,35 +104,39 @@ h5 {
     height: 40%;
 }
 
-.tabs-button {
-    padding: 1rem;
-    margin: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    border: 2px solid #FF5A00;
-    border-radius: 1rem;
+.wrapper-boxes{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.botoes-gerencia-container {
+    width: 90%;
+    display: flex;
+
+}
+
+.botao-gerencia {
+    width: 100%;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+    border: 2px solid #5D3189;
     background-color: #fff;
 }
 
-.tabs-button:focus {
-    background-color: #FF5A00;
+.botao-gerencia:focus {
+    background-color: #5D3189;
     color: #fff;
-    border: 2px solid #FF5A00;
-    border-radius: 1rem;
+    border: 2px solid #5D3189;
     outline: 0;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #FF5A00;
-}
-
 .box{
-    margin-right:5%;
-    margin-left:7%;
-    width: 50%;
-    margin-top: 5%;
-    height: 20%;
+    margin-bottom: 1rem;
+    width: 100%;
     border: 2px solid #FF5A00;
     border-radius: 20px;
     text-align: left;
@@ -85,7 +144,6 @@ h1 {
     padding-right: 2%;
     padding-left: 2%;
     padding-bottom: 2%;
-    margin-bottom: 8%;
 }
 
 .title{
@@ -96,10 +154,6 @@ h1 {
     width: 40%;
     margin-right: 0%;
     margin-top: 5%;
-}
-
-.footer{
-    margin-top:0%;
 }
 
 .special-text{
@@ -134,6 +188,7 @@ h1 {
 
 .esquerda{
     margin-right: 5%;
+    width: 20rem;
 }
 
 .esquerda-items{
@@ -144,6 +199,7 @@ h1 {
 }
 
 .direita{
+    width: 20rem;
     margin-left: 5%;
     align-items: center;
     justify-content: center;
@@ -157,12 +213,7 @@ h1 {
     display: flex;
 }
 
-.wrapper-boxes{
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-}
+
 
 
 .adquirirMilhas{
@@ -172,14 +223,7 @@ h1 {
     margin-bottom: 10%;
 }
 
-.despesas{
-    width:70%;
-    height:60%;
+.footer{
+    margin-top:0%;
 }
 
-.despesas-wrapper{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
