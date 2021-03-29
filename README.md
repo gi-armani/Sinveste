@@ -13,6 +13,7 @@ JavaScript
  
 Para o projeto funcionar corretamente é necessário ter o servidor Apache instalado na máquina, pois o back-end foi desenvolvido com a linguagem PHP. Para rodar o banco de dados, utilize o MySQL.
 A escolha destas tecnologias se deu em função da facilidade de escalabilidade e, em um primeiro momento, ter a possibilidade de implementação rápida com baixo custo para experimentar a adesão do público. 
+
 :octocat: Time
 Gabriela Han - UX
 Giovana Armani - Desenvolvedora
