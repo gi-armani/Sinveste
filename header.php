@@ -17,9 +17,9 @@
             <a href="index.php"> <img src='fotos/logo.svg'/> </a>
             <div id='menu'>
                 <ul>
-                    <li><a href="">Ajuda</a></li>
-                    <li><a href="">Cadastro</a></li>
-                    <li><a href="">Entrar</a></li>
+                    <!-- <li><a href="">Ajuda</a></li>
+                    <li><a href="">Cadastro</a></li> -->
+                    <li><a href="">Bem-vindo!</a></li>
                 </ul>
 
             </div>
